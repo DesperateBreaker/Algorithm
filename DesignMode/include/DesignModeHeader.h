@@ -5,6 +5,7 @@
 #include "XiaoMiCar.h"
 #include "HuaWeiCar.h"
 #include "Tesla.h"
+#include "Phone.h"
 
 
 #endif
