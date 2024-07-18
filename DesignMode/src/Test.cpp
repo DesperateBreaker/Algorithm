@@ -2,6 +2,7 @@
 #include "SimpleCarFactory.h"
 #include "FactoryMethod.h"
 #include "AbstractFactory.h"
+#include "BuilderMode.h"
 
 int main() {
     // 简单工厂模式测试
@@ -25,6 +26,18 @@ int main() {
     std::unique_ptr<Phone> pPhone4 = pXiaoMiFactory->createPhone();
     pCar4->Backward();
     pPhone4->Call();
+
+    // 建造者模式
+    Builder* pBuilder = new TopBuilder();
+    Director* pDirector = new Director();
+    Computer* pComputer = pDirector->GetComputer(pBuilder);
+    pComputer->Run();
+
+    Builder* pBuilder2 = new MediumBuilder();
+    Computer* pComputer2 = pDirector->GetComputer(pBuilder2);
+    pComputer2->Run();
+
+
 
 
     
