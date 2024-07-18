@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories(include)
 
 # 添加源文件
-set(SRC_LIST src/Test.cpp src/XiaoMiCar.cpp src/Tesla.cpp src/HuaWeiCar.cpp src/Phone.cpp src/BuilderMode.cpp)
+set(SRC_LIST src/Test.cpp src/XiaoMiCar.cpp src/Tesla.cpp src/HuaWeiCar.cpp src/Phone.cpp src/BuilderMode.cpp src/BuilderModeWithoutDirector.cpp)
 
 # 添加头文件
 file(GLOB_RECURSE HEADER_LIST "include/*.h")

@@ -3,6 +3,7 @@
 #include "FactoryMethod.h"
 #include "AbstractFactory.h"
 #include "BuilderMode.h"
+#include "BuilderModeWithoutDirector.h"
 
 int main() {
     // 简单工厂模式测试
@@ -37,10 +38,15 @@ int main() {
     Computer* pComputer2 = pDirector->GetComputer(pBuilder2);
     pComputer2->Run();
 
+    // 建造者模式(自定义)
+    ABuilder* pBuilder3 = new ACustomBuilder();
+    AComputer* pComputer3 = pBuilder3->CreatComputer();     // 默认装配
+    pComputer3->Run();
 
+    // 利用链式调用，自定义装配，Client 就充当了原有指挥者的角色
+    AComputer* pComputer4 = pBuilder3->SetCPU("i7-12700")->SetGPU("4080")->CreatComputer();
+    pComputer4->Run();
 
-
-    
     system("pause");
 
     return 0;
